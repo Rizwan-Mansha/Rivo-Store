@@ -31,6 +31,11 @@ export default {
       type: 'number',
     },
     {
+      name:"price_id",
+      title:"Stripe Pyment Id",
+      type:"string"
+    },
+    {
       name: 'category',
       title: 'Category of Product',
       type: 'reference',

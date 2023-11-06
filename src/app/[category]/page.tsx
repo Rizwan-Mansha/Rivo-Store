@@ -1,12 +1,14 @@
+
 import { client } from "@/lib/sanity";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const getData = async (category: string) => {
   const query = `*[_type == "product" && category->name == "${category}"]{
     _id,
     name,
+    price,
     "slug": slug.current,
     "imageUrl": image[0].asset->url,
     "categoryName": category->name
@@ -15,17 +17,17 @@ const getData = async (category: string) => {
   return data;
 };
 
-interface CategoryInterface {
+export interface CategoryInterface {
   _id: string;
   name: string;
   slug: string;
   image: any;
   category: string;
+  price: string;
 }
 
 const CategoryPage = async ({ params }: { params: { category: string } }) => {
   const data: any = await getData(params.category);
-  console.log(data);
 
   return (
     <div className="bg-white">

@@ -10,10 +10,12 @@ export interface simplifiedProduct{
 
 export interface fullProduct {
   _id: string;
-  slug: string;
-  name: string;
+  slug: string,
+  name: string,
   description:string,
-  categoryName: string
-  image: any;
-  price:string
+  categoryName: string,
+  image: any,
+  price:string,
+  price_id:string
+
 }
