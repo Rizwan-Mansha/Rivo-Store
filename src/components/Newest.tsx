@@ -1,11 +1,11 @@
-import { client } from "@/lib/sanity";
+import { client} from "@/lib/sanity";
 import { simplifiedProduct } from "./interface";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 async function getData() {
-  const query = `*[_type =='product'] | order(_createdAt desc){
+  const query = `*[_type =='product'] | order(_createdAt){
   _id,
   price,
   name,
@@ -18,6 +18,7 @@ async function getData() {
 const data = client.fetch(query);
 return data;
 }
+
 
 export default async function Newest() {
     const data:simplifiedProduct[] = await getData();
@@ -41,7 +42,7 @@ export default async function Newest() {
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {data.map((product) => (
+            {data.map((product:any) => (
               <div key={product._id} className="group relative">
                 <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
                   <Link href={`/product/${product.slug}`}>
