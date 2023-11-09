@@ -5,6 +5,10 @@ import Navbar from '@/components/Navbar'
 
 import CartProvider from '../components/Providers'
 import ShoppingCartModel from '@/components/ShoppingCartModel'
+import Script from 'next/script'
+import Head from 'next/head'
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,6 +16,7 @@ export const metadata: Metadata = {
   title: 'Riz Store',
   description: 'Riz E-Commerce Store',
 }
+
 
 export default function RootLayout({
   children,
@@ -21,6 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+       
+
         <CartProvider>
           <Navbar />
           <ShoppingCartModel />

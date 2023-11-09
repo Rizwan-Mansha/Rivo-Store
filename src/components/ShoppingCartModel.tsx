@@ -19,6 +19,8 @@ const ShoppingCartModel = () => {
     removeItem,
     totalPrice,
     redirectToCheckout,
+    incrementItem,
+    decrementItem
   } = useShoppingCart();
 
   const handleCheckoutClick = async (event: any) => {
@@ -70,8 +72,22 @@ const ShoppingCartModel = () => {
                         </div>
 
                         <div className="flex flex-1 items-end justify-between text-sm">
+                          <Button
+                            className="w-8 h-8 text-lg text-center mt-2"
+                            onClick={() => incrementItem(entry.id)}>
+                            +
+                          </Button>
                           <p className="text-gray-500">QTY: {entry.quantity}</p>
 
+                          <Button
+                            className="w-8 h-8 text-lg text-center mt-2"
+                            onClick={() => {
+                              if (entry.quantity > 1) {
+                                decrementItem(entry.id);
+                              }
+                            }}>
+                            -
+                          </Button>
                           <div className="flex">
                             <button
                               type="button"
@@ -98,7 +114,9 @@ const ShoppingCartModel = () => {
               Shipping and taxes are calculated at checkout.
             </p>
             <div className="mt-6">
-              <Button onClick={handleCheckoutClick} className="w-full ">Checkout</Button>
+              <Button onClick={handleCheckoutClick} className="w-full ">
+                Checkout
+              </Button>
             </div>
             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>

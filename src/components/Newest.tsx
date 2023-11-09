@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 async function getData() {
-  const query = `*[_type =='product'] | order(_createdAt){
+  const query = `*[_type =='product'] | order(_createdAt desc){
   _id,
   price,
   name,
@@ -33,7 +33,7 @@ export default async function Newest() {
 
             <Link
               className="text-primary flex items-center gap-x-1"
-              href="/all">
+              href="/AllProducts">
               See All{" "}
               <span className="">
                 <ArrowRight />
@@ -41,17 +41,17 @@ export default async function Newest() {
             </Link>
           </div>
 
-          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {data.map((product:any) => (
+          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 ">
+            {data.slice(0,8).map((product: any) => (
               <div key={product._id} className="group relative">
-                <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
+                <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-[330px]">
                   <Link href={`/product/${product.slug}`}>
                     <Image
                       src={product.imageUrl}
                       alt={product.name}
                       width={300}
                       height={300}
-                      className="w-full h-full object-cover object-center lg:h-full lg:w-full"
+                      className="w-full h-full object-cover  lg:h-full lg:w-full"
                     />
                   </Link>
                 </div>

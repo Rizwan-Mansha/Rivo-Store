@@ -2,7 +2,6 @@
 import { client } from "@/lib/sanity";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
 
 const getData = async (category: string) => {
   const query = `*[_type == "product" && category->name == "${category}"]{

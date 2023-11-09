@@ -26,7 +26,6 @@ const CheckOutNow = ({
     price_id: price_id,
     currency: currency,
     image: urlFor(image).url(),
-    
   };
   return (
     <Button
