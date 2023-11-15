@@ -2,7 +2,6 @@ import { client, urlFor } from "@/lib/sanity";
 import Image from "next/image";
 import Link from "next/link";
 
-
 //Server actions
 async function getData() {
   const query = "*[_type == 'heroImage'][0]";
@@ -10,6 +9,13 @@ async function getData() {
   const data = await client.fetch(query);
   return data;
 }
+
+const links = [
+  { name: "Men", link: "/Men" },
+  { name: "Women", link: "/Women" },
+  { name: "Child", link: "/Child" },
+  { name: "All Products", link: "/AllProducts" },
+];
 
 const Hero = async () => {
   const data = await getData();
@@ -38,40 +44,29 @@ const Hero = async () => {
             />
           </div>
           <div className="overflow-hidden rounded-lg bg-gray-100 shadow-lg">
-                <Image 
-                src={urlFor(data.image2).url()}
-                alt="Great Photo"
-                priority
-                className="h-full w-full object-cover object-center" 
-                width={500}
-                height={500}/>
-
+            <Image
+              src={urlFor(data.image2).url()}
+              alt="Great Photo"
+              priority
+              className="h-full w-full object-cover object-center"
+              width={500}
+              height={500}
+            />
           </div>
         </div>
       </div>
       <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-        <div className="flex h-12 w-80 divide-x overflow-hidden rounded-lg border">
-            <Link href="/Men"
-            className="flex w-1/3 items-center justify-center text-gray-5 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
-            Men
+        <div className="flex h-12 w-80 sm:w-96 divide-x overflow-hidden rounded-lg border">
+          {links.map((data, idx) => (
+            <Link
+              href={data.link}
+              key={idx}
+              className="flex w-1/3 items-center justify-center text-gray-5 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
+              {data.name}
             </Link>
-            <Link href="/Women"
-            className="flex w-1/3 items-center justify-center text-gray-5 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
-            Women
-            </Link>
-            <Link href="/Teens"
-            className="flex w-1/3 items-center justify-center text-gray-5 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
-            Teens
-            </Link>
-           
-            <Link href="AllProducts"
-            className="text-center flex w-1/3 items-center justify-center text-gray-5 transition duration-100 hover:bg-gray-100 active:bg-gray-200">
-            All Products
-            </Link>
-           
+          ))}
         </div>
       </div>
-
     </section>
   );
 };

@@ -39,7 +39,7 @@ const ShoppingCartModel = () => {
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
       <SheetContent className="sm:max-w-lg w-[90vw] ">
         <SheetHeader>
-          <SheetTitle>Edit Profile</SheetTitle>
+          <SheetTitle>{cartCount} Items Ready for Checkout</SheetTitle>
         </SheetHeader>
 
         <div className="h-full flex flex-col flex-between">
