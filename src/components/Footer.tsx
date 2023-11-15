@@ -8,8 +8,8 @@ const Company = ["About Us", "Contact", "News", "Support"];
 
 const Footer = () => {
   return (
-    <section className="relative  max-w-7xl h-[500px] sm:h-[450px] lg:h-[360px]  text-gray-800 bg-gray-300 ">
-      <div className="lg:flex md:gap-x-32 ">
+    <section className="relative   lg:max-w-7xl h-[500px] sm:h-[450px] lg:h-[360px] xl:max-w-screen-2xl  mx-auto  text-gray-800 bg-gray-300 ">
+      <div className="lg:flex lg:justify-center md:gap-x-32 ">
         <div className="px-6 sm:flex sm:gap-x-24 md:gap-x-32 ">
           <div className="md:my-16 sm:my-12 ">
             <p className=" font-bold font-serif text-2xl mb-4">RizStore</p>
