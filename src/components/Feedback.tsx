@@ -18,6 +18,8 @@ const getData = async() => {
   return await response();
 }
 
+
+
 const Feedback = async() => {
   const feedback = await getData();
   return (
@@ -26,8 +28,8 @@ const Feedback = async() => {
         Feedback Corner
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-4 mx-auto md:mx-32 max-sm:mx-4">
-        {feedback.map((fback: FeedbackInter) => (
-          <div className="hover:bg-[#cf82c1] hover:rounded-lg my-10 mx-auto ">
+        {feedback.map((fback: FeedbackInter, idx: number) => (
+          <div key={idx} className="hover:bg-[#cf82c1] hover:rounded-lg my-10 mx-auto ">
             <p className="text-bold text-4xl sm:text-5xl">“</p>
             <div className="text-[#224F34] font-semibold text-lg">
               {fback.name}

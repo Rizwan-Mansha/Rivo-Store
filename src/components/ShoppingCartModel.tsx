@@ -46,10 +46,10 @@ const ShoppingCartModel = () => {
           <div className="mt-8 flex-1 overflow-y-auto">
             <ul className="my-6 divide-y divide-gray-200">
               {cartCount === 0 ? (
-                <h1 className="py-6">you don't have some items</h1>
+                <h1 className="py-6">you don&apos;t have some items</h1>
               ) : (
                 <>
-                  {Object.values(cartDetails ?? {}).map((entry) => (
+                  {Object.values(cartDetails ?? {}).map((entry, idx) => (
                     <li key={entry.id} className="flex py-6">
                       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                         <Image
@@ -81,7 +81,7 @@ const ShoppingCartModel = () => {
                             }}>
                             -
                           </Button>
-                          
+
                           <p className="text-gray-500">QTY: {entry.quantity}</p>
 
                           <Button

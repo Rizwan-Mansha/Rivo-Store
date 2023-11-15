@@ -12,13 +12,18 @@ const getData = () => {
         imageDescription,
   }`;
   const fetchData = async () => {
-    const data = await client.fetch(query);
+    const data:DataInterface[] = await client.fetch(query);
     return data;
   };
   const FetchedData = fetchData();
   return FetchedData;
 };
 
+interface DataInterface{
+  image:string,
+  category: string,
+  imageDescription: string
+}
 const DesignCloth = async () => {
   const data = await getData();
   return (
@@ -35,8 +40,8 @@ const DesignCloth = async () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 max max-sm:w-5/6  mx-[9%]    md:justify-center  gap-x-4">
-          {data.map((product: any) => (
-            <div className="aspect-square overflow-hidden rounded-md mb-4 bg-gray-200 group-hover:opacity-75 ">
+          {data.map((product: DataInterface, idx:number) => (
+            <div key={idx} className="aspect-square overflow-hidden rounded-md mb-4 bg-gray-200 group-hover:opacity-75 ">
               <Image
                 src={product.image}
                 alt="Best Selling"

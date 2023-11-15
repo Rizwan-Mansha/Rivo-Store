@@ -40,8 +40,8 @@ const BestSelling = async () => {
          
         </div>
         <div className="flex justify-center gap-x-2 sm:gap-x-8 mx-auto md:gap-x-16 mt-12 font-semibold text-gray-700 hover:text-[#224F34] ">
-          {keyWords.map((word) => (
-            <li className="list-none ">
+          {keyWords.map((word,idx) => (
+            <li className="list-none " key={idx}>
               <Link href={word.link}>
                 <h3 className="uppercase hover:underline">{word.name}</h3>
               </Link>
