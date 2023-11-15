@@ -74,19 +74,20 @@ const ShoppingCartModel = () => {
                         <div className="flex flex-1 items-end justify-between text-sm">
                           <Button
                             className="w-8 h-8 text-lg text-center mt-2"
-                            onClick={() => incrementItem(entry.id)}>
-                            +
-                          </Button>
-                          <p className="text-gray-500">QTY: {entry.quantity}</p>
-
-                          <Button
-                            className="w-8 h-8 text-lg text-center mt-2"
                             onClick={() => {
                               if (entry.quantity > 1) {
                                 decrementItem(entry.id);
                               }
                             }}>
                             -
+                          </Button>
+                          
+                          <p className="text-gray-500">QTY: {entry.quantity}</p>
+
+                          <Button
+                            className="w-8 h-8 text-lg text-center mt-2"
+                            onClick={() => incrementItem(entry.id)}>
+                            +
                           </Button>
                           <div className="flex">
                             <button

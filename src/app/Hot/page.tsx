@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const fetchAllProducts = async () => {
-  const query = `*[_type == "product" ]{
+  const query = `*[_type == "product" && category->name == 'Hot' ]{
   _id,
     name,
     description,
@@ -13,21 +13,20 @@ const fetchAllProducts = async () => {
     "image":image[0].asset->url,
     "slug":slug.current,
     "category":category->name
-}`
-const data = await client.fetch(query)
-return data;
+}`;
+  const data = await client.fetch(query);
+  return data;
 };
 
-const page = async() => {
-  const data: CategoryInterface[] = await fetchAllProducts()
-
+const page = async () => {
+  const data: CategoryInterface[] = await fetchAllProducts();
 
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4  sm:px-6  lg:max-w-7xl lg:px-8 mb-20">
         <div className="flex justify-center items-center py-8">
           <h2 className="text-3xl font-bold font-serif tracking-tight text-gray-900">
-            All Products
+            {data[0].category}<span className="text-primary"> Products</span>
           </h2>
         </div>
 
@@ -52,7 +51,7 @@ const page = async() => {
                   </Link>
 
                   <p className="mt-1 text-sm  text-gray-500">
-                    {product.category}
+                    {product.categoryName}
                   </p>
                 </div>
 

@@ -1,0 +1,8 @@
+.swiper-slide {
+  flex-direction: column;
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  height: auto;
+}

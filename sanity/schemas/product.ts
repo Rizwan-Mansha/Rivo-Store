@@ -41,5 +41,10 @@ export default {
       type: 'reference',
       to: [{type: 'category'}],
     },
+    {
+      name: "rating",
+      title: "Product Rating",
+      type: "string"
+    }
   ],
 }

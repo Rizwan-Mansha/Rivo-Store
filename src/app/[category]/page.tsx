@@ -30,10 +30,10 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
 
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-2xl px-4  sm:px-6  lg:max-w-7xl lg:px-8">
-        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-            Our Products for {params.category}
+      <div className="mx-auto max-w-2xl px-4  sm:px-6  lg:max-w-7xl lg:px-8 mb-20">
+        <div className="flex justify-center items-center py-8">
+          <h2 className="text-3xl font-bold font-serif tracking-tight text-gray-900">
+            {params.category} <span className="text-primary">Products</span> 
           </h2>
         </div>
 

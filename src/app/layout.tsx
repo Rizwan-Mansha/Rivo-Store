@@ -7,6 +7,7 @@ import CartProvider from '../components/Providers'
 import ShoppingCartModel from '@/components/ShoppingCartModel'
 import Script from 'next/script'
 import Head from 'next/head'
+import Footer from '@/components/Footer'
 
 
 
@@ -32,6 +33,7 @@ export default function RootLayout({
           <Navbar />
           <ShoppingCartModel />
           {children}
+          <Footer />
         </CartProvider>
       </body>
     </html>
