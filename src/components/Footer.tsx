@@ -32,14 +32,14 @@ const Footer = () => {
           <div className="sm:my-12  flex  gap-x-20 max-sm:mt-6 md:my-16">
             <div className=" mb-12">
               <h3 className="font-semibold mb-4">SHOP</h3>
-              {Shop.map((item) => (
-                <li className="list-none ">{item}</li>
+              {Shop.map((item, idx) => (
+                <li key={idx} className="list-none ">{item}</li>
               ))}
             </div>
             <div className="gap-x-5">
               <h3 className="font-semibold mb-4">COMPANY</h3>
-              {Company.map((item) => (
-                <li className="list-none">{item}</li>
+              {Company.map((item,idx) => (
+                <li key={idx} className="list-none">{item}</li>
               ))}
             </div>
           </div>
