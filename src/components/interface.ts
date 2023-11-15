@@ -15,7 +15,7 @@ export interface fullProduct {
   description:string,
   categoryName: string,
   image: any,
-  price:string,
+  price:number,
   price_id:string
 
 }
