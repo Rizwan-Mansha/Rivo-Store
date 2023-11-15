@@ -7,7 +7,7 @@ import { urlFor } from "@/lib/sanity";
 export interface ProductCart {
   name: string;
   description: string;
-  price: string;
+  price: number;
   currency: string;
   image: any;
   price_id: string;
