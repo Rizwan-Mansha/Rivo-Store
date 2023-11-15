@@ -58,7 +58,7 @@ const Navbar = () => {
         </div>
         <nav className={isOpen ? `${"fixed block z-20"}` : `${"hidden"}`}>
           <div className=" fixed inset-y-0 right-0 w-1/2 bg-white z-0 overflow-y-auto">
-            <div className="flex ml-[60%] max-sm:ml-[70%]">
+            <div className="flex ml-[50%]  sm:ml-[70%]">
               <Button
                 onClick={() => handleCartClick()}
                 variant={"outline"}
