@@ -30,6 +30,8 @@ const AddToBag = ({
     price_id: price_id,
     currency: currency,
     image: urlFor(image).url(),
+    sku: "12345"
+    
   };
   return (
     <Button

@@ -3,18 +3,22 @@ export default {
   type: 'document',
   title: 'Product',
   fields: [
+    
     {
+      
       name: 'name',
       type: 'string',
       title: 'Name of Product',
     },
     {
+      
       name: 'image',
       title: 'Product Images',
       type: 'array',
       of: [{type: 'image'}],
     },
     {
+
       name: 'description',
       type: 'string',
       title: 'Description of Product',
@@ -31,9 +35,9 @@ export default {
       type: 'number',
     },
     {
-      name:"price_id",
-      title:"Stripe Pyment Id",
-      type:"string"
+      name: 'price_id',
+      title: 'Stripe Pyment Id',
+      type: 'string',
     },
     {
       name: 'category',
@@ -42,9 +46,9 @@ export default {
       to: [{type: 'category'}],
     },
     {
-      name: "rating",
-      title: "Product Rating",
-      type: "string"
-    }
+      name: 'rating',
+      title: 'Product Rating',
+      type: 'string',
+    },
   ],
 }
