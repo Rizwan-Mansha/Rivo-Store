@@ -1,9 +1,7 @@
 import clothes from './clothes'
-import feedback from './Feedback'
 import category from './category'
-import heroImages from './heroImages'
+import heroImages from './heroimages'
 import product from './product'
 import Clothes from './clothes'
-import Feedback from './Feedback'
-
-export const schemaTypes = [product, category, heroImages,Clothes, Feedback]
+import Feedback from './feedback'
+export const schemaTypes = [product, category, heroImages, Clothes, Feedback]
