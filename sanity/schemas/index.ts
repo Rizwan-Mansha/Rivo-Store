@@ -1,6 +1,7 @@
-import category from './category'
-import heroimages from './heroimages'
-import product from './product'
-import feedback from './feedback'
-import clothes from './clothes'
-export const schemaTypes = [product, category, heroimages, clothes, feedback]
+import category from "./category";
+import clothes from "./clothes";
+import Feedback from "./feedback";
+import heroImages from "./heroimages";
+import product from "./product";
+
+export const schemaTypes = [product, category, heroImages, clothes, Feedback]
